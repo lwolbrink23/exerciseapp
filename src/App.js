@@ -1,6 +1,7 @@
 import "./App.css";
 import DurFunction from "./components/DurationExercise";
 import RepFunction from "./components/RepetitionExercise";
+import RunFunction from "./components/RunningExercise";
 import { useState } from "react";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const showMenu = displayMode === 1;
   const showDurApp = displayMode === 2;
   const showRepApp = displayMode === 3;
+  const showRunApp = displayMode === 4;
 
   function showExercise(number, name) {
     setDisplayMode(number);
@@ -26,7 +28,7 @@ function App() {
         <button onClick={() => showExercise(3, "Jumping Jacks")}>
           Jumping Jacks
         </button>
-        <button onClick={() => showExercise(2, "Running")}>Running</button>
+        <button onClick={() => showExercise(4, "Running")}>Running</button>
         <button onClick={() => showExercise(3, "Sit Ups")}>Sit Ups</button>
       </header>
     </div>
@@ -38,6 +40,7 @@ function App() {
         {showMenu ? menu : null}
         {showDurApp ? <DurFunction name={name} /> : null}
         {showRepApp ? <RepFunction name={name} /> : null}
+        {showRunApp ? <RunFunction name={name} /> : null}
       </div>
     </div>
   );
